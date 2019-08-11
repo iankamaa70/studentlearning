@@ -29,7 +29,7 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->created_at))->diffForHumans() ?></td>
-                                    <td><a href="{{ route('admin.users.approve', $user->id) }}"
+                                    <td><a href="{{ route('teacher.user.approve', $user->id) }}"
                                            class="btn btn-success btn-sm">Approve</a></td>
                                 </tr>
                             @empty
@@ -114,7 +114,7 @@
                                         <td>{{ $user->email }}</td>
                                         <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->created_at))->diffForHumans() ?></td>
                                         <td><a href="{{ route('teacher.users.approve', $user->id) }}"
-                                               class="btn btn-success btn-sm">Make teacher</a></td>
+                                               class="btn btn-success btn-sm disabled">Make teacher</a></td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -136,17 +136,10 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->created_at))->diffForHumans() ?></td>
-                                        <td><a href="{{ route('admin.users.delete', $user->id) }}"
-                                              
-                                              @if ($user->email=="iankamaa70@gmail.com")
-                                              class="btn btn-danger btn-sm disabled"
-                                              @else
-                                              class="btn btn-danger btn-sm" 
-                                              @endif
-                                               >Delete</a></td>
+                                        <td><a href="{{ route('admin.users.delete', $user->id) }}" class="btn btn-danger btn-sm disabled">Delete</a></td>
                                     
                                     <td><a href="{{ route('teacher.users.block', $user->id) }}"
-                                        class="btn btn-primary btn-sm">block</a></td>
+                                        class="btn btn-primary btn-sm disabled">block</a></td>
                              </tr>
                                 @empty
                                     <tr>

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 Route::group(['middleware' => ['auth']], function() {
 
 
@@ -36,7 +36,9 @@ Route::group(['middleware' => ['auth']], function() {
     
     Route::middleware(['admin'])->group(function () {
         Route::get('/users', 'UserController@index')->name('admin.users.index');
+        Route::get('/users/teacher', 'UserController@indexteacher')->name('teacher.users.index');
         Route::get('/users/{user_id}/approve', 'UserController@approve')->name('admin.users.approve');
+        Route::get('/users/{user_id}/approve/teacher', 'UserController@teacherUserapprove')->name('teacher.user.approve');
         Route::get('/users/{user_id}/delete', 'UserController@delete')->name('admin.users.delete');
         Route::get('/users/{user_id}/block', 'UserController@block')->name('admin.users.block');
 
