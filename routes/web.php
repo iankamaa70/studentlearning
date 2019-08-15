@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/content/{id}','WebContentController@update')->name('admin.webcontent.update');
         Route::get('/webcontent','WebContentController@index')->name('admin.webcontent');
         Route::get('/studentprogress','StudentTests@index')->name('admin.studentprogress.id');
+        Route::post('/studentprogress','StudentTests@filter')->name('admin.studentprogress');
+
+
         Route::get('/users', 'UserController@index')->name('admin.users.index');
         Route::get('/users/teacher', 'UserController@indexteacher')->name('teacher.users.index');
         Route::get('/users/{user_id}/approve', 'UserController@approve')->name('admin.users.approve');

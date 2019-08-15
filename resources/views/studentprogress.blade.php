@@ -19,7 +19,7 @@
         </ul>
     </div>
 @endif
-                        <form method="POST" action="{{route('admin.studentprogress.id')}}">
+                        <form method="POST" action="{{route('admin.studentprogress')}}">
                         <div class="row">
                       
                             <div class="col-6">

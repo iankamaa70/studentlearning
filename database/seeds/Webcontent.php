@@ -14,7 +14,7 @@ class Webcontent extends Seeder
         Content::create([
             'homepage_bold'=>"Learn Online",
             'homepage_text'=>"Learn and assess online.",
-            'homepage_image'=>"",
+            'homepage_image'=>"images/tests.png",
         ]);;
 
     }
