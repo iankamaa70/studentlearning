@@ -8,12 +8,12 @@
         <div class="container page__container py-64pt py-md-112pt">
             <div class="row align-items-center text-center text-md-left">
                 <div class="col-md-6 col-lg-5 order-1 order-md-0">
-                    <h1 class="text-white">Learn <span class="d-block d-md-inline-block text-scramble">Online</span></h1>
-                    <p class="lead mb-32pt mb-lg-48pt text-white">Learn and assess online.</p>
+                    <h1 class="text-white">{{$content->homepage_bold}}<span class="d-block d-md-inline-block text-scramble">Online</span></h1>
+                    <p class="lead mb-32pt mb-lg-48pt text-white">{{$content->homepage_text}}</p>
                     
                 </div>
                 <div class="col-md-6 col-lg-7 order-0 order-md-1 text-center mb-32pt mb-md-0">
-                    <img src="assets/images/learn.jpg" alt="Learning" class="img-fluid home-macbook">
+                    <img src="{{URL::asset($content->homepage_image)}}" alt="Learning" class="img-fluid home-macbook">
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>laravel</title>
+<title>Learn online</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -105,7 +105,7 @@
                     <div class="container">
 
                         <!-- Navbar Brand -->
-                        <a href="index.html" class="navbar-brand">
+                        <a href="/" class="navbar-brand">
                             <img class="navbar-brand-icon" src="{{URL::asset('assets/images/logo/white-100%402x.png')}}" width="30" alt="Student Learning">
                             <span class="d-none d-md-block">Student Learning</span>
                         </a>

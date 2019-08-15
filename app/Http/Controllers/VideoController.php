@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Videos;
 use App\Modules;
+use File;
 
 class VideoController extends Controller
 {
@@ -143,6 +144,10 @@ class VideoController extends Controller
     public function destroy($id)
     {
         $videos = Videos::findOrFail($id);
+        $usersvideo = public_path($videos->video);
+        if (File::exists($usersvideo)) { 
+            unlink($usersvideo);
+        }
         $videos->delete();
 
         return redirect('/videos')->with('success', 'Record is successfully deleted');

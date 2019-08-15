@@ -12,10 +12,10 @@ class AdminSeeder extends Seeder
     public function run()
     {
         \App\User::create([
-            'name' => 'Ian kamau himga',
-            'email' => 'iankamaa70@gmail.com',
+            'name' => 'Administrator',
+            'email' => 'wwsisdac@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('3333dreamer'),
+            'password' => bcrypt('Admin123'),
             'isAdmin' => 1,
             'isApproved' => 1,
         ]);

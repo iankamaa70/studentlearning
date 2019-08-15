@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Modules;
 use App\Videos;
 use App\Tests;
+use App\Content;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $this->middleware(['auth'=>'verified']);
     }
 
+  
     /**
      * Show the application dashboard.
      *

@@ -54,7 +54,7 @@
                                     <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->created_at))->diffForHumans() ?></td>
                                     <td><a href="{{ route('admin.users.delete', $user->id) }}"
                                           
-                                          @if ($user->email=="iankamaa70@gmail.com")
+                                          @if ($user->email=="wwsisdac@gmail.com")
                                           class="btn btn-danger btn-sm disabled"
                                           @else
                                           class="btn btn-danger btn-sm" 
@@ -62,7 +62,12 @@
                                            >Delete</a></td>
                                 
                                 <td><a href="{{ route('admin.users.block', $user->id) }}"
-                                    class="btn btn-primary btn-sm">block</a></td>
+                                     
+                                        @if ($user->email=="wwsisdac@gmail.com")
+                                        class="btn btn-primary btn-sm disabled"
+                                        @else
+                                        class="btn btn-primary btn-sm" 
+                                        @endif>block</a></td>
                          </tr>
                             @empty
                                 <tr>
@@ -138,7 +143,7 @@
                                         <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($user->created_at))->diffForHumans() ?></td>
                                         <td><a href="{{ route('admin.users.delete', $user->id) }}"
                                               
-                                              @if ($user->email=="iankamaa70@gmail.com")
+                                              @if ($user->email=="wwsisdac@gmail.com")
                                               class="btn btn-danger btn-sm disabled"
                                               @else
                                               class="btn btn-danger btn-sm" 
