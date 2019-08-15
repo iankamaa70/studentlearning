@@ -8,7 +8,7 @@
         <div class="container page__container py-64pt py-md-112pt">
             <div class="row align-items-center text-center text-md-left">
                 <div class="col-md-6 col-lg-5 order-1 order-md-0">
-                    <h1 class="text-white">{{$content->homepage_bold}}<span class="d-block d-md-inline-block text-scramble">Online</span></h1>
+                    <h1 class="text-white">{{$content->homepage_bold}}<span class="d-block d-md-inline-block text-scramble"></span></h1>
                     <p class="lead mb-32pt mb-lg-48pt text-white">{{$content->homepage_text}}</p>
                     
                 </div>
