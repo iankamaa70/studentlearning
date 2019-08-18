@@ -70,3 +70,5 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
+view()->composer('*', '\App\Http\Controllers\WebContentController@webdata');
+

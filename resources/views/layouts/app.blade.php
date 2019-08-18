@@ -106,8 +106,8 @@
 
                         <!-- Navbar Brand -->
                         <a href="/" class="navbar-brand">
-                            <img class="navbar-brand-icon" src="{{URL::asset('assets/images/logo/white-100%402x.png')}}" width="30" alt="Student Learning">
-                            <span class="d-none d-md-block">Student Learning</span>
+                            <img class="navbar-brand-icon" src="{{URL::asset($content->web_logo)}}" width="30" alt="Student Learning">
+                        <span class="d-none d-md-block">{{$content->web_name}}</span>
                         </a>
 
                         <!-- Main Navigation -->
@@ -213,9 +213,10 @@
                         </div>
                         <div class="col-md-4 text-md-right">
                             <p class="text-70 brand justify-content-md-end">
-                                <img class="brand-icon" src="{{URL::asset('assets/images/logo/black-70%402x.png')}}" width="30" alt="Student Learning"> Student Learning
+                                <img class="brand-icon" src="{{URL::asset($content->web_logo)}}" width="30" alt="Student Learning">
+                                {{$content->web_name}}
                             </p>
-                            <p class="text-muted mb-0 mb-lg-16pt">Student Learning is an online learning platform that helps anyone achieve their personal and professional goals.</p>
+                            <p class="text-muted mb-0 mb-lg-16pt">{{$content->web_footer_text}}</p>
                         </div>
                     </div>
                 </div>

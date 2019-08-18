@@ -45,6 +45,20 @@
                             @endif
                     <form method="POST" action="{{route('admin.webcontent.update',$content->id)}}" enctype="multipart/form-data">
                         @csrf
+
+                        <div class="form-group">
+                            <label class="form-label-group">Website Logo</label>
+                    <img src="{{URL::asset($content->web_logo)}}" style="height: 150px" class="img-fluid">
+                       <input type="file" name="web_logo" class="form-control-sm">
+                        </div>
+                        <div class="form-group">
+                            <label>Website name</label>
+                        <input class="form-control" type="text" name="web_name" value="{{$content->web_name}}"\>
+                        </div>
+                        <div class="form-group">
+                            <label>Footer text</label>
+                        <textarea name="web_footer_text" cols="5" rows="5" class="form-control">{{$content->web_footer_text}}</textarea>
+                        </div>
                         <div class="form-group">
                             <label>Homepage Bold text</label>
                         <input class="form-control" type="text" name="homepage_bold" value="{{$content->homepage_bold}}"\>

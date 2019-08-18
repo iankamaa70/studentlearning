@@ -18,6 +18,9 @@ class CreateContentsTable extends Migration
             $table->string('homepage_bold');
             $table->string('homepage_text');
             $table->string('homepage_image');
+            $table->string('web_logo');
+            $table->string('web_name');
+            $table->text('web_footer_text');
             $table->timestamps();
         });
     }

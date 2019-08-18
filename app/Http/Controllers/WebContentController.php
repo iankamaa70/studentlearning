@@ -76,6 +76,9 @@ class WebContentController extends Controller
             'homepage_bold'=>'required',
             'homepage_text'=>'required',
             'homepage_image'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'web_logo'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'web_name'=>'required',
+            'web_footer_text'=>'required'
                           ]);
 
         $content=Content::find($id);
@@ -94,8 +97,24 @@ class WebContentController extends Controller
 
         }
 
+        if($request->hasfile('web_logo')){
+            $usersImage = public_path($content->web_logo);
+        if (File::exists($usersImage)) { 
+            unlink($usersImage);
+        }
+            $file=$request->web_logo;
+            $name=time().$file->getClientOriginalName();
+            $file->move(public_path().'/images/', $name);  
+            $data = $name;
+            $path= '/images/'. $name;
+            $content->web_logo=$path;
+
+        }
+
         $content->homepage_bold=$request->homepage_bold;
         $content->homepage_text=$request->homepage_text;
+        $content->web_name=$request->web_name;
+        $content->web_footer_text=$request->web_footer_text;
 
         $content->update();
        return redirect()->route('admin.webcontent')->with('success','Information saved successfully');
@@ -110,5 +129,10 @@ class WebContentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function webdata($view){
+        $content=Content::first();
+        $view->with('content',$content);
     }
 }
